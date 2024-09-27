@@ -1,5 +1,6 @@
 package com.donyx.torrebranca.domain.posts;
 
+import com.donyx.torrebranca.domain.users.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,6 +26,10 @@ public class Post {
 
     @Column(name = "TITULO")
     private String titulo;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "ID_USUARIO")
+    private User autor;
 
     @Column(name = "DESCRICAO")
     private String descricao;
