@@ -20,7 +20,7 @@ public class PostService {
     }
 
     @Transactional
-    public Post Create(NewPostDTO dto){
+    public Post create(NewPostDTO dto){
         Post post = new Post(dto);
         return postRepository.save(post);
     }

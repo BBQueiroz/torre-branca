@@ -37,11 +37,11 @@ public class Post {
     @Column(name = "DESCRICAO")
     private String descricao;
 
-    @Column(name = "conteudo", length = 5000)
+    @Column(name = "conteudo")
     private String conteudo;
 
-    @Column(name = "DATA_HORA_INICIO")
-    private LocalDateTime dataHoraInicio;
+    @Column(name = "DATA_HORA")
+    private LocalDateTime dataHora;
 
     @OneToMany(mappedBy = "titulo", cascade = CascadeType.ALL)
     private List<Comment> commentList;

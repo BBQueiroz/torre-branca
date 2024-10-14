@@ -30,9 +30,6 @@ public class Comment {
     @JoinColumn(name = "ID_USUARIO")
     private User autor;
 
-    @Column(name = "DESCRICAO")
-    private String descricao;
-
     @Column(name = "conteudo", length = 5000)
     private String conteudo;
 
