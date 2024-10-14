@@ -1,5 +1,6 @@
 package com.donyx.torrebranca.domain.posts;
 
+import com.donyx.torrebranca.domain.comments.Comment;
 import com.donyx.torrebranca.domain.users.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -39,6 +40,9 @@ public class Post {
 
     @Column(name = "DATA_HORA_INICIO")
     private LocalDateTime dataHoraInicio;
+
+    @OneToMany(mappedBy = "titulo", cascade = CascadeType.ALL)
+    private List<Comment> commentList;
 
     @ElementCollection
     @CollectionTable(name = "post_tags", joinColumns = @JoinColumn(name = "post_id"))

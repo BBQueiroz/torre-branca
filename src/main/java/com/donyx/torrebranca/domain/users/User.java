@@ -29,7 +29,7 @@ public class User implements UserDetails {
     @Column(name="ID_USER")
     private Long id;
 
-    @Column(name="NOME", nullable = false)
+    @Column(name="NOME")
     private String nome;
 
     @Column(name="EMAIL", nullable = false, unique = true, length = 100)
@@ -52,6 +52,12 @@ public class User implements UserDetails {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="UPDATE_USER_ID")
     private User updateUser;
+
+    public User(String login, String encryptedPassword, UsuarioPerfil perfil) {
+        this.email = login;
+        this.senha = encryptedPassword;
+        this.perfil = perfil;
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

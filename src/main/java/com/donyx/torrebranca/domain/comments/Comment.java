@@ -40,6 +40,6 @@ public class Comment {
     private LocalDateTime createDatetime;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "POST")
+    @JoinColumn(name = "POST_ID")
     private Post post;
 }
